@@ -1,0 +1,29 @@
+public class StoreController {
+
+List<Store> mStores;
+
+    StoreController() {
+
+        mStores = new ArrayList<>();
+            }
+
+    void addStore(String name) {
+        if (search(name) != null) {
+            Store store = new Store();
+            System.out.println("This Store " +store.getName()+ " is aleardy exist");
+        } else {
+            Store S = new Store();
+            S.setName(name);
+            mStores.add(S);
+        }
+    }
+    Store search(String name) {
+        for (int i = 0; i < mStores.size(); i++) {
+            if (mStores.get(i).getName() == name) {
+                return mStores.get(i);
+            }
+        }
+        return null;
+    }
+
+}
